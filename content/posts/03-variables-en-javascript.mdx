@@ -4,36 +4,78 @@ description: Las variables son fundamentales en la programación. Aprende qué s
 date: "2024-08-10"
 ---
 
-Una variable es un contenedor que te permite almacenar datos bajo un nombre específico. De manera más técnica, es un **espacio en la memoria del ordenador** donde puedes guardar, modificar e interactuar con esos datos.
-
+Una variable es un contenedor que te permite almacenar datos bajo un nombre específico. De manera más técnica, es un espacio en la memoria del ordenador donde puedes guardar, modificar e interactuar con esos datos.
 <Image src="/post-3/boxes.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
 
-En este espacio, puedes almacenar diferentes tipos de datos, como texto, números, valores booleanos, entre otros. Los tipos de datos estaran en el **post-4**.
+En este espacio, puedes almacenar diferentes tipos de datos, como texto, números, valores booleanos, entre otros. Los tipos de datos estarán en post-4.
+# Maneras de crear una variable:
 
-### Crear una variable
-
-1. Elegir un nombre para la variable: Elige un nombre descriptivo que indique qué tipo de datos almacenará la variable.
-2. Declarar la variable: Usa la palabra clave adecuada (por ejemplo, `let`, `const`, o `var` en JavaScript) seguida del nombre de la variable.
-3. Asignar un valor: Opcionalmente, puedes asignar un valor a la variable cuando la declares.
+1. **Elegir un nombre para la variable**, elige un nombre descriptivo que indique qué tipo de datos almacenará la variable.
+2. **Declarar la variable**, usa la palabra clave adecuada (por ejemplo, `let`, `const`, o `var` en JavaScript) seguida del nombre de la variable.
+3. **Asignar un valor**, opcionalmente, puedes asignar un valor a la variable cuando la declares.
 
 ## `let`
 
-- Generalemente se ocupa, para variables que pueden ser reasignadas, pero no redeclaradas en el mismo bloque
-- Tiene un alcande de bloque, esto lo explicare mas adelante, pero imagina que tenemos una caja dentro de una caja, la caja que esta mas adentro no puede compartir la variable a la caja de fuera.
+- Generalmente, `let` se usa para variables que pueden ser reasignadas, pero no redeclaradas en el mismo bloque.
+- Tiene un alcance de bloque, esto lo explicaré más adelante. Pero imagina que tenemos una caja dentro de otra caja; la caja que está más adentro no puede compartir la variable con la caja de afuera.
 
-#### Codigo:
+### Codigo:
 
 <CodeBlock language="javascript">
 {` let nombre = "Juan";  // creando la variable
- console.log(nombre);  // imprimiendo la variable en la consola
+ console.log(nombre);  // resultado: "Juan"
+
+ nombre = "Pedro";    // reasignando la variable
+ console.log(nombre); // resultado: "Pedro"
+
+ // let nombre = "Maria"; // ❌ esto no es válido, porque estamos redeclarando la variable
 `}
 </CodeBlock> 
 
-> Las "//" son comentarios y esto no afecta en nada el codigo, sirve para documentar el codigo y otros desarrolladores entiendan los que escribres.
+> Las '//' son comentarios y esto no afecta en nada el codigo, sirve para documentar el codigo y otros desarrolladores entiendan los que escribres. 
+
+
 
 <Image src="/post-3/let-code.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
 
-> Te invito a que escribas el codigo en la consola del navegador o en jsconsole y reemplaces "Juan" por tu nombre y veas el resultado
+Te invito a que escribas el codigo en la consola del navegador o en jsconsole y reemplaces "Juan" por tu nombre y veas el resultado
 
 ## `const`
 
+- Declaración: const se utiliza para declarar variables que no pueden ser reasignadas después de su inicialización. Es ideal para valores que no deben cambiar su valor.
+- Alcance (Scope): Igual que let, las variables declaradas con const tienen alcance de bloque, esto se explicara en la clase de [scope](scope).
+- Inmutabilidad: Aunque la variable no puede ser reasignada, los objetos y arrays declarados con const pueden tener su contenido modificado.
+
+### Codigo:
+
+<CodeBlock language="javascript">
+{` const pi = 3.14159;
+
+ const lista = [1, 2, 3];
+ lista.push(4); // esto es válido, porque estamos modificando el contenido, no la referencia.
+`}
+</CodeBlock> 
+
+<Image src="/post-3/pi.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
+
+## `var`
+
+- Declaración: var es la forma más antigua de declarar variables en JavaScript. Se utiliza para variables que pueden ser reasignadas y redeclaradas.
+- Alcance (Scope): Las variables declaradas con var tienen alcance de función, lo que significa que si se declaran dentro de una función, existen en toda la función, sin importar si están dentro de un bloque.
+
+### Codigo:
+
+<CodeBlock language="javascript">
+{` var edad = 30;
+ var edad = 40; // esto es válido, pero no recomendable porque puede causar confusión.
+
+ if (true) {
+   var mensaje = "Hola";
+ }
+ console.log(mensaje); // resultado: "Hola"
+`}
+</CodeBlock> 
+
+<Image src="/post-3/var.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
+
+Ve la documentacion de [mozila]("https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types") para que puedas entender mejor.
