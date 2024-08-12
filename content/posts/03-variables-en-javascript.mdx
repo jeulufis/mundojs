@@ -14,68 +14,84 @@ En este espacio, puedes almacenar diferentes tipos de datos, como texto, número
 2. **Declarar la variable**, usa la palabra clave adecuada (por ejemplo, `let`, `const`, o `var` en JavaScript) seguida del nombre de la variable.
 3. **Asignar un valor**, opcionalmente, puedes asignar un valor a la variable cuando la declares.
 
-## `let`
+## 1) let
 
 - Generalmente, `let` se usa para variables que pueden ser reasignadas, pero no redeclaradas en el mismo bloque.
 - Tiene un alcance de bloque, esto lo explicaré más adelante. Pero imagina que tenemos una caja dentro de otra caja; la caja que está más adentro no puede compartir la variable con la caja de afuera.
 
-### Codigo:
+### Código:
 
 <CodeBlock language="javascript">
 {` let nombre = "Juan";  // creando la variable
  console.log(nombre);  // resultado: "Juan"
 
- nombre = "Pedro";    // reasignando la variable
+ nombre = "Pedro";    // ✅ reasignando la variable
  console.log(nombre); // resultado: "Pedro"
 
  // let nombre = "Maria"; // ❌ esto no es válido, porque estamos redeclarando la variable
 `}
 </CodeBlock> 
 
-> Las '//' son comentarios y esto no afecta en nada el codigo, sirve para documentar el codigo y otros desarrolladores entiendan los que escribres. 
+> Las '//' son comentarios y no afectan en nada el código; sirven para documentar el código y que otros desarrolladores entiendan lo que escribes.
 
-
+### Ejemplo:
 
 <Image src="/post-3/let-code.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
 
 Te invito a que escribas el codigo en la consola del navegador o en jsconsole y reemplaces "Juan" por tu nombre y veas el resultado
 
-## `const`
+## 2) const
 
-- Declaración: const se utiliza para declarar variables que no pueden ser reasignadas después de su inicialización. Es ideal para valores que no deben cambiar su valor.
-- Alcance (Scope): Igual que let, las variables declaradas con const tienen alcance de bloque, esto se explicara en la clase de [scope](scope).
-- Inmutabilidad: Aunque la variable no puede ser reasignada, los objetos y arrays declarados con const pueden tener su contenido modificado.
+- Se utiliza `const` para declarar variables que no pueden ser reasignadas después de su inicialización. Es ideal para valores que no deben cambiar su valor.
+- Igual que `let`, las variables declaradas con `const` tienen alcance de bloque, esto se explicara en la clase de [scope](scope).
+- Aunque la variable no puede ser reasignada, los objetos y arrays declarados con const pueden tener su contenido modificado.
 
-### Codigo:
+### Código:
 
 <CodeBlock language="javascript">
-{` const pi = 3.14159;
+{` const pi = 3.14159; // ✅ esto es válido, porque declaramos la variable
+ 
+ const pi = 3.14 // ❌ esto no es válido, porque estamos redeclarando la variable
+ pi = 3.14; // ❌ esto no es válido, porque estamos reasignando la variable
 
  const lista = [1, 2, 3];
- lista.push(4); // esto es válido, porque estamos modificando el contenido, no la referencia.
+ lista.push(4); // ✅ esto es válido, porque estamos modificando el contenido, no la referencia
+
+ console.log(lista);
 `}
 </CodeBlock> 
 
+### Ejemplo:
+
 <Image src="/post-3/pi.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
 
-## `var`
+## 3) var
 
-- Declaración: var es la forma más antigua de declarar variables en JavaScript. Se utiliza para variables que pueden ser reasignadas y redeclaradas.
+- Declaración: `var` es la forma más antigua de declarar variables en JavaScript. Se utiliza para variables que pueden ser reasignadas y redeclaradas.
 - Alcance (Scope): Las variables declaradas con var tienen alcance de función, lo que significa que si se declaran dentro de una función, existen en toda la función, sin importar si están dentro de un bloque.
 
-### Codigo:
+### Código:
 
 <CodeBlock language="javascript">
 {` var edad = 30;
- var edad = 40; // esto es válido, pero no recomendable porque puede causar confusión.
+ var edad = 40; // ✅ esto es válido, ❌ pero no recomendable porque puede causar confusión
 
  if (true) {
    var mensaje = "Hola";
  }
- console.log(mensaje); // resultado: "Hola"
+ console.log(mensaje); // resultado: "Hola" -> en let y const esto no sería válido
 `}
 </CodeBlock> 
 
+### Ejemplo:
+
+Este ejemplo se realizó en la consola del navegador. Si quieres probarlo por ti mismo, abre la consola con `Cmd` + `Opción` + `J` en una Mac o `Ctrl` + `Shift` + `J` en Windows.
+
 <Image src="/post-3/var.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
 
-Ve la documentacion de [mozila]("https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types") para que puedas entender mejor.
+Consulta la documentación de [Mozilla]("https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types")  para que puedas entender mejor, todavía quedan por aprender conceptos importantes como :
+
+- Hoisting
+- Naming Rules
+- Scopes
+
