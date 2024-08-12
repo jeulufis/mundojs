@@ -1,0 +1,35 @@
+---
+title: 03 - Varibles en JavaScript
+description: Las variables son fundamentales en la programación. Aprende qué son, cómo declararlas y para qué se utilizan, para que puedas manejarlas de manera eficiente en tus proyectos.
+date: "2024-08-10"
+---
+
+Una variable es un contenedor que te permite almacenar datos bajo un nombre específico. De manera más técnica, es un **espacio en la memoria del ordenador** donde puedes guardar, modificar e interactuar con esos datos.
+
+<Image src="/post-3/boxes.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
+
+En este espacio, puedes almacenar diferentes tipos de datos, como texto, números, valores booleanos, entre otros. Los tipos de datos estaran en el **post-4**.
+
+### Crear una variable
+
+1. Elegir un nombre para la variable: Elige un nombre descriptivo que indique qué tipo de datos almacenará la variable.
+2. Declarar la variable: Usa la palabra clave adecuada (por ejemplo, `let`, `const`, o `var` en JavaScript) seguida del nombre de la variable.
+3. Asignar un valor: Opcionalmente, puedes asignar un valor a la variable cuando la declares.
+
+## `let`
+
+- Generalemente se ocupa, para variables que pueden ser reasignadas, pero no redeclaradas en el mismo bloque
+- Tiene un alcande de bloque, esto lo explicare mas adelante, pero imagina que tenemos una caja dentro de una caja, la caja que esta mas adentro no puede compartir la variable a la caja de fuera.
+
+#### Codigo:
+
+```js
+let nombre = "Juan"; 
+alert(nombre);
+```
+
+<Image src="/post-3/let-code.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
+
+> Te invito a que escribas el codigo en la consola del navegador o en jsconsole y reemplaces "Juan" por tu nombre y veas el resultado
+
+## `const`
