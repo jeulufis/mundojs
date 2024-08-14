@@ -1,0 +1,127 @@
+---
+title: 04 - Tipos datos en JavaScript  (Strings, Numbers, Booleans, Undefined, Null, Arrays y Objects)
+description: Es importante definir que tipos de variables vamos como, string, number, boolean, entre otros, para poder trabajar con ellas de manera eficiente.
+date: "2024-08-13"
+---
+
+Ya conocimos como crear una variable ahora tenemos que conocer los tipos de [datos]("https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures") que tenemos un JavaScript.
+
+Segun ECMAScript existen 9 tipos de datos:
+
+- **String**
+- **Number**
+- **Boolean**
+- **Undefined**
+- **Object**
+- Function
+- Null
+- Symbol
+- BigInt
+
+## String
+
+Representan una secuencia de caracteres y texto.
+
+<CodeBlock language="javascript">
+{` let variableString = "Secuencia de caracteres";  // creando la variable
+ console.log(variable_string);  // resultado: "Secuencia de caracteres"
+`}
+</CodeBlock> 
+
+## Number
+
+Representa tanto números enteros como números de punto flotante.
+
+<CodeBlock language="javascript">
+{` let variableNumber = 12 ;  // creando variable entero
+ let variableNumber2 = 1.2 ;  // creando variable flotante
+
+ console.log(variableNumber);  // resultado: 12
+ console.log(variableNumber2);  // resultado: 1.2 
+`}
+</CodeBlock> 
+
+## Boolean
+
+Representa valores logicos como verdadero o falso.
+
+- **true**: Verdadero
+- **false**: Falso
+
+<CodeBlock language="javascript">
+{` let isTrue = true; // creando variable booleana verdadera
+ let isFalse = false; // creando variable booleana falsa
+
+ console.log(isTrue);  // resultado: true
+ console.log(isFalse);  // resultado: false
+`}
+</CodeBlock> 
+
+## Undefined
+
+Representa una variable que ha sido declarada pero no se le ha asignado un valor, en otras palabras es crear una variable pero no se le asignar un varlor.
+
+<CodeBlock language="javascript">
+{` let variableUndefined;  // creando variable sin valor
+
+ console.log(variableUndefined);  // resultado: undefined
+`}
+</CodeBlock>
+
+## Object
+
+Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. Los [Object]("https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_objects") son un conceptos que necesitan entender a fondo, ya que son la base de JavaScript.
+<CodeBlock language="javascript">
+{` let obj = { name: "John", age: 30 }; // name = clave, "John" = valor
+
+ console.log(obj); // { name: "John", age: 30 }
+`}
+</CodeBlock>
+
+## Function
+
+Es un subtipo especial de object que representa funciones, que son objetos invocables. Conoceremos mas sobre las [function](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function) mas adelante.
+
+Pero imagino que esto es un conjunto de instrucciones que realiza una tarea o calcula un valor.
+
+<CodeBlock language="javascript">
+{` function greet() { // creando function
+  return "Hello!";
+ }
+
+ console.log(greet()); // "Hello!"
+`}
+</CodeBlock>
+
+## Null
+
+Representa la ausencia intencional de cualquier valor de objeto y se trata como falso en las operaciones booleanas.
+
+<CodeBlock language="javascript">
+{` let b = null;
+
+ console.log(b); // null
+`}
+</CodeBlock>
+
+## Symbol
+
+Representa un valor único y constante, a menudo utilizado como identificador de propiedades de objetos.
+
+<CodeBlock language="javascript">
+{` let symbol = Symbol('unique');
+
+ console.log(symbol); // Symbol(unique)
+`}
+</CodeBlock>
+
+## BigInt
+
+El tipo de datos BigInt es un tipo de datos numérico que proporciona soporte para enteros más grandes que el límite seguro para el tipo de datos Number.
+
+<CodeBlock language="javascript">
+{` const bigInt = 1234567890123456789012345678901234567890n;
+
+ console.log(bigInt); // 1234567890123456789012345678901234567890n
+`}
+</CodeBlock>
