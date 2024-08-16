@@ -1,11 +1,10 @@
 ---
 title: 04 - Tipos datos en JavaScript  (Strings, Numbers, Booleans, Undefined, Null, Arrays y Objects)
-description: Es fundamental definir los tipos de variables que vamos a utilizar, como string, number, boolean, entre otros, para trabajar con ellas de manera eficiente.
+description: Trabajaremos constantemente con variables, por lo que es fundamental aprender a utilizarlas correctamente.
 date: "2024-08-13"
 ---
 
-Después de aprender a crear una variable, es crucial entender los diferentes tipos de datos [datos]("https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures") que existen en JavaScript. Una comprensión sólida de estos conceptos es clave para escribir código eficiente, evitar errores comunes y desarrollar aplicaciones más robustas y escalables.
-
+Trabajaremos constantemente con variables, por lo que es fundamental aprender a utilizarlas correctamente.
 <Image src="/post-4/post-4.jpg" width="718" height="404" alt="Imagen javascript con codigo de fondo" />
 
 
@@ -27,6 +26,7 @@ Representan una secuencia de caracteres y texto.
 
 <CodeBlock language="javascript">
 {` let variableString = "Secuencia de caracteres";  // creando la variable
+
  console.log(variable_string);  // resultado: "Secuencia de caracteres"
 `}
 </CodeBlock> 
@@ -80,7 +80,7 @@ Los [Object]("https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working
 <CodeBlock language="javascript">
 {` let obj = { name: "John", age: 30 }; // name = clave, "John" = valor
 
- console.log(obj); // { name: "John", age: 30 }
+ console.log(obj); // resultado: { name: "John", age: 30 }
 `}
 </CodeBlock>
 
@@ -95,7 +95,7 @@ Pero imagino que esto es un conjunto de instrucciones que realiza una tarea o ca
   return "Hello!";
  }
 
- console.log(greet()); // "Hello!"
+ console.log(greet()); // resultado: "Hello!"
 `}
 </CodeBlock>
 
@@ -106,7 +106,7 @@ Representa la ausencia intencional de cualquier valor de objeto y se trata como 
 <CodeBlock language="javascript">
 {` let b = null;
 
- console.log(b); // null
+ console.log(b); // resultado: null
 `}
 </CodeBlock>
 
@@ -117,7 +117,7 @@ Representa un valor único y constante, a menudo utilizado como identificador de
 <CodeBlock language="javascript">
 {` let symbol = Symbol('unique');
 
- console.log(symbol); // Symbol(unique)
+ console.log(symbol); // resultado: Symbol(unique)
 `}
 </CodeBlock>
 
@@ -128,6 +128,10 @@ El tipo de datos BigInt es un tipo de datos numérico que proporciona soporte pa
 <CodeBlock language="javascript">
 {` const bigInt = 1234567890123456789012345678901234567890n;
 
- console.log(bigInt); // 1234567890123456789012345678901234567890n
+ console.log(bigInt); // resultado: 1234567890123456789012345678901234567890n
 `}
 </CodeBlock>
+
+> Prueba en la consola de tu navegador con diferentes tipos de datos para que te familiarices con ellos.
+
+<Image src="/post-4/ejercicio.png" width="718" height="404" alt="Gráfico de uso de JavaScript" />
