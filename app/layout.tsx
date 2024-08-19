@@ -1,12 +1,12 @@
 import Link from "next/link"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Rubik } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@/components/analytics"
 import { ModeToggle } from "@/components/mode-toggle"
 import Footer from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Rubik({ subsets: ["latin"] })
 
 export const metadata = {
   title: "MundoJS - Aprende JavaScript de forma sencilla.",
