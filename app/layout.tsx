@@ -4,11 +4,12 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@/components/analytics"
 import { ModeToggle } from "@/components/mode-toggle"
+import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Mundo js",
+  title: "MundoJS - Aprende JavaScript de forma sencilla.",
   description: "Aprende JavaScript, React, Next.js, TypeScript, y más.",
 }
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </header>
             <main>{children}</main>
+            <Footer />
           </div>
           <Analytics />
         </ThemeProvider>
