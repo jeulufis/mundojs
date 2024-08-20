@@ -6,7 +6,7 @@ import { Analytics } from "@/components/analytics"
 import { ModeToggle } from "@/components/mode-toggle"
 import Footer from "@/components/footer"
 
-const inter = Rubik({ subsets: ["latin"] })
+const inter = Rubik({ subsets: ["latin"], weight:["400","500","600", "700", "800", "900"] })
 
 export const metadata = {
   title: "MundoJS - Aprende JavaScript de forma sencilla.",

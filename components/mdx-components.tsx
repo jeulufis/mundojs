@@ -1,10 +1,12 @@
 import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import CodeBlock from "./code-block"
+import MdxTables from "./mdx-tables"
 
 const components = {
   Image,
-  CodeBlock
+  CodeBlock,
+  MdxTables
 }
 
 interface MdxProps {

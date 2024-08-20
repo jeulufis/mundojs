@@ -1,6 +1,6 @@
 ---
 title: 05 - Operadores Básicos de Matemáticas
-description:  Aprende a utilizar los operadores matemáticos en JavaScript de manera sencilla y efectiva.
+description: Aprende a utilizar los operadores matemáticos en JavaScript de manera sencilla y efectiva.
 date: "2024-08-19"
 ---
 
@@ -12,3 +12,14 @@ Al ocupar JavaScript es muy comun ocupar estos llamados operadores, estos operad
 - Nullish Coalescing
 - Optional chaining
 - Operadores lógicos
+
+<MdxTables
+  columns={["Nombre", "Operador", "Descripcion"]}
+  data={[
+    { name: "Suma", operador: "a + b", description: "Suma el valor de a al valor de b." },
+  ]}
+  renderCell={(item, columnIndex) => {
+    const keys = ["name", "operador", "description"];
+    return item[keys[columnIndex]];
+  }}
+/>
