@@ -1,0 +1,89 @@
+---
+title: 06 - Sentencias condicional If, Else, Else If
+description: Aprender a utilizar la estructura de control de flujo condicional, nos permite tomar decisiones en el código.
+date: "2024-08-19"
+---
+
+<Image
+  src="/post-6/condicional.png"
+  width="518"
+  height="404"
+  alt="Imagen condicional if, else, else if"
+/>
+
+Al adentrarnos en el mundo de la programación, es fundamental que diferentes **condiciones** desencadenen **acciones** específicas. Para lograr esto, utilizamos las estructuras de control de flujo condicionales `if`, `else`, y `else if`, que nos permiten tomar decisiones en función de las circunstancias.
+
+## 1. Sentencia If
+
+La sentencia `if` es una estructura de control de flujo condicional que nos permite ejecutar un bloque de código si una condición es verdadera (true).
+
+<CodeBlock language="javascript">
+{` let edadUsuario = 18;  // creando la variable edad con valor 18
+
+  if(edadUsuario >= 18) {  // si la edad del usuario es mayor o igual a 18
+    console.log("Eres mayor de edad");  // 
+  }
+`}
+</CodeBlock>
+
+También es posible escribir el código de la siguiente manera, aunque se recomienda utilizar llaves para evitar posibles errores.
+<CodeBlock language="javascript">
+{` let edadUsuario = 18;  // creando la variable edad con valor 18
+
+ if(edadUsuario >= 18) console.log("Eres mayor de edad"); 
+`}
+</CodeBlock>
+
+## 2. Sentencia Else
+
+La sentencia `else` se utiliza para ejecutar un bloque de código si la condición en el if es falsa.
+
+<CodeBlock language="javascript">
+{` let numero = 3;
+
+ if (numero > 5) {
+  console.log("El número es mayor que 5");
+ } else {
+  console.log("El número es 5 o menor"); // ejecuta esta linea
+ }
+`}
+</CodeBlock>
+
+## 3. Sentencia Else If
+
+Si necesitas evaluar múltiples condiciones, puedes usar `else if`.
+
+<CodeBlock language="javascript">
+{` let numero = 7;
+
+ if (numero > 10) {
+  console.log("El número es mayor que 10");
+ } else if (numero > 5) {
+  console.log("El número es mayor que 5 pero menor o igual a 10");
+ } else {
+  console.log("El número es 5 o menor");
+ }
+`}
+</CodeBlock>
+
+En este ejemplo, la condición `(numero > 5)` es verdadera, por lo que se ejecutará el bloque correspondiente y se imprimirá "El número es mayor que 5 pero menor o igual a 10".
+
+## Notas adicionales:
+
+- Las condiciones pueden ser cualquier expresión que retorne un valor booleano (true o false).
+- Puedes utilizar operadores lógicos como `&&`(AND) o `||` (OR) para combinar condiciones.
+
+### Ejemplo con operadores lógicos:
+
+<CodeBlock language="javascript">
+{` let numero = 8;
+
+ if (numero > 5 && numero < 10) {
+  console.log("El número está entre 5 y 10");
+ } else {
+  console.log("El número no está en el rango");
+ }
+`}
+</CodeBlock>
+
+Aquí, la condición combina dos comparaciones con &&, y dado que ambas son verdaderas, el mensaje **El número está entre 5 y 10** será impreso.
