@@ -1,5 +1,5 @@
 ---
-title: 05 - Operadores JavaScript
+title: 05 - Operadores en JavaScript
 description: Aprende a utilizar los operadores nos sirven para para realizar operaciones, comparaciones y tomar decisiones en los lenguajes de programacion.
 date: "2024-08-19"
 ---
@@ -11,14 +11,14 @@ date: "2024-08-19"
   alt="Imagen javascript con codigo de fondo"
 />
 
-Al ocupar JavaScript es muy comun ocupar estos llamados operadores, estos operadores nos permitiran realizar operaciones matematicas con sus valores y comparar diferentes variables. En JavaScript tenemos estos tipos de operadores:
+Aprende a utilizar los **operadores**, que nos sirven para **realizar** operaciones, comparaciones y tomar decisiones en los lenguajes de **programación**. 
 
 1. Operadores Aritméticos
 2. Operadores de Asignación
 3. Operadores de Cadena
 4. Operadores de Comparación
 5. Operadores Lógicos
-7. Operadores Especiales
+6. Operadores Especiales
 
 ## Operadores Aritmeticos
 
@@ -26,15 +26,15 @@ Al ocupar JavaScript es muy comun ocupar estos llamados operadores, estos operad
   columns={["Nombre", "Operador", "Descripcion"]}
   data={[
     { name: "Suma", operador: "a + b", description: "Suma el valor de a al valor de b." },
-    { name: "Resta", operador: "a - b", description: "Resta  el valor de a al valor de b." },
-    { name: "Multiplicacion", operador: "a * b", description: "Multiplica  el valor de a al valor de b." },
-    { name: "Division", operador: "a / b", description: "Divide el valor de a entre el valor de b." },
-    { name: "Modulo", operador: "a % b", description: "Devuelve el resto de la división de a entre b." },
-    { name: "Exponenciación	", operador: "a ** b", description: "Eleva a a la potencia de b." },
-    { name: "Incremento	", operador: "a++", description: "Aumenta el valor a en uno." },
-    { name: "Decremento", operador: "a--", description: "Disminuye el valor a en uno." },
-
+    { name: "Resta", operador: "a - b", description: "Resta el valor de b al valor de a." },
+    { name: "Multiplicación", operador: "a * b", description: "Multiplica el valor de a por el valor de b." },
+    { name: "División", operador: "a / b", description: "Divide el valor de a entre el valor de b." },
+    { name: "Módulo", operador: "a % b", description: "Devuelve el resto de la división de a entre b." },
+    { name: "Exponenciación", operador: "a ** b", description: "Eleva a a la potencia de b." },
+    { name: "Incremento", operador: "a++", description: "Aumenta el valor de a en uno." },
+    { name: "Decremento", operador: "a--", description: "Disminuye el valor de a en uno." },
 ]}
+
 renderCell={(item, columnIndex) => {
 const keys = ["name", "operador", "description"];
 return item[keys[columnIndex]];
@@ -48,47 +48,47 @@ return item[keys[columnIndex]];
  let a = 10;
  let b = 5;
 
-// Suma
-let suma = a + b;
-console.log("Suma: " + suma); // Resultado: 15
+ // Suma
+ let suma = a + b;
+ console.log("Suma: " + suma); // Resultado: 15
 
-// Resta
-let resta = a - b;
-console.log("Resta: " + resta); // 5
+ // Resta
+ let resta = a - b;
+ console.log("Resta: " + resta); // 5
 
-// Multiplicación
-let multiplicacion = a \* b;
-console.log("Multiplicación: " + multiplicacion); // 50
+ // Multiplicación
+ let multiplicacion = a \* b;
+ console.log("Multiplicación: " + multiplicacion); // 50
 
-// División
-let division = a / b;
-console.log("División: " + division); // 2
+ // División
+ let division = a / b;
+ console.log("División: " + division); // 2
 
-// Módulo (resto de la división)
-let modulo = a % b;
-console.log("Módulo: " + modulo); // 0
+ // Módulo (resto de la división)
+ let modulo = a % b;
+ console.log("Módulo: " + modulo); // 0
 
-// Incremento
-a++;
-console.log("Incremento: " + a); // 11
+ // Incremento
+ a++;
+ console.log("Incremento: " + a); // 11
 
-// Decremento
-b--;
-console.log("Decremento: " + b); // 4
+ // Decremento
+ b--;
+ console.log("Decremento: " + b); // 4
 `}
 
 </CodeBlock>
 
 ## Operadores de Asignacion
 
-Un operador de asignación asigna un valor a su operando izquierdo basándose en el valor de su operando derecho.
+Un operador de asignación asigna un valor al operando izquierdo basándose en el valor del operando derecho. 
 
 <CodeBlock language="javascript">
   {` x = y
 `}
 </CodeBlock>
 
-De esta manera tenemos los siguientes operadores de comparación en **Javascript**:
+De esta manera, tenemos los siguientes operadores de comparación en **JavaScript**:
 
 <MdxTables
   columns={["Operador", "Extendido", "Descripcion"]}
