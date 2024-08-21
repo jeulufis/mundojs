@@ -1,0 +1,292 @@
+---
+title: 05 - Operadores JavaScript
+description: Aprende a utilizar los operadores nos sirven para para realizar operaciones, comparaciones y tomar decisiones en JavaScript.
+date: "2024-08-19"
+---
+
+<Image
+  src="/post-5/mathematics.jpg"
+  width="718"
+  height="404"
+  alt="Imagen javascript con codigo de fondo"
+/>
+
+Al ocupar JavaScript es muy comun ocupar estos llamados operadores, estos operadores nos permitiran realizar operaciones matematicas con sus valores y comparar diferentes variables. En JavaScript tenemos estos tipos de operadores:
+
+1. Operadores Aritméticos
+2. Operadores de Asignación
+3. Operadores de Cadena
+4. Operadores de Comparación
+5. Operadores Lógicos
+7. Operadores Especiales
+
+## Operadores Aritmeticos
+
+<MdxTables
+  columns={["Nombre", "Operador", "Descripcion"]}
+  data={[
+    { name: "Suma", operador: "a + b", description: "Suma el valor de a al valor de b." },
+    { name: "Resta", operador: "a - b", description: "Resta  el valor de a al valor de b." },
+    { name: "Multiplicacion", operador: "a * b", description: "Multiplica  el valor de a al valor de b." },
+    { name: "Division", operador: "a / b", description: "Divide el valor de a entre el valor de b." },
+    { name: "Modulo", operador: "a % b", description: "Devuelve el resto de la división de a entre b." },
+    { name: "Exponenciación	", operador: "a ** b", description: "Eleva a a la potencia de b." },
+    { name: "Incremento	", operador: "a++", description: "Aumenta el valor a en uno." },
+    { name: "Decremento", operador: "a--", description: "Disminuye el valor a en uno." },
+
+]}
+renderCell={(item, columnIndex) => {
+const keys = ["name", "operador", "description"];
+return item[keys[columnIndex]];
+}}
+/>
+
+### Ejemplos de Operadores Aritmeticos
+
+<CodeBlock language="javascript">
+{` // Declaración de variables
+ let a = 10;
+ let b = 5;
+
+// Suma
+let suma = a + b;
+console.log("Suma: " + suma); // Resultado: 15
+
+// Resta
+let resta = a - b;
+console.log("Resta: " + resta); // 5
+
+// Multiplicación
+let multiplicacion = a \* b;
+console.log("Multiplicación: " + multiplicacion); // 50
+
+// División
+let division = a / b;
+console.log("División: " + division); // 2
+
+// Módulo (resto de la división)
+let modulo = a % b;
+console.log("Módulo: " + modulo); // 0
+
+// Incremento
+a++;
+console.log("Incremento: " + a); // 11
+
+// Decremento
+b--;
+console.log("Decremento: " + b); // 4
+`}
+
+</CodeBlock>
+
+## Operadores de Asignacion
+
+Un operador de asignación asigna un valor a su operando izquierdo basándose en el valor de su operando derecho.
+
+<CodeBlock language="javascript">
+  {` x = y
+`}
+</CodeBlock>
+
+De esta manera tenemos los siguientes operadores de comparación en **Javascript**:
+
+<MdxTables
+  columns={["Operador", "Extendido", "Descripcion"]}
+  data={[
+    {
+      name: "x += y",
+      operador: "x = x + y",
+      description:
+        "Suma al valor actual de x el valor de y para asignarlo a x.",
+    },
+    {
+      name: "x -= y",
+      operador: "x = x - y",
+      description:
+        "Substrae al valor actual de x el valor de y para asignarlo a x.",
+    },
+    {
+      name: "x *= y",
+      operador: "x = x * y",
+      description:
+        "Multiplica al valor actual de x el valor de y para asignarlo a x.",
+    },
+    {
+      name: "x /= y",
+      operador: "x = x / y",
+      description:
+        "Divide al valor actual de x el valor de y para asignarlo a x.",
+    },
+    {
+      name: "x %= y",
+      operador: "x = x % y",
+      description: "Calcula el resto de x dividido entre y para asignarlo a x.",
+    },
+    {
+      name: "x **= y",
+      operador: "x = x ** y",
+      description: "Calcula el exponente de x elevado a y para asignarlo a x.",
+    },
+  ]}
+  renderCell={(item, columnIndex) => {
+    const keys = ["name", "operador", "description"];
+    return item[keys[columnIndex]];
+  }}
+/>
+
+<CodeBlock language="javascript">
+{` let x = 5;  // x ahora es 5
+
+ let x = 5;
+ x += 3; // x ahora es 8 (equivalente a x = x + 3)
+
+ let x = 5;
+ x -= 2; // x ahora es 3 (equivalente a x = x - 2)
+
+ let x = 5;
+ x _= 4; // x ahora es 20 (equivalente a x = x _ 4)
+
+ let x = 10;
+ x /= 2; // x ahora es 5 (equivalente a x = x / 2)
+
+ let x = 10;
+ x %= 3; // x ahora es 1 (equivalente a x = x % 3)
+
+ let x = 2;
+ x **= 3; // x ahora es 8 (equivalente a x = x ** 3)
+`}
+</CodeBlock>
+
+## Operadores de Cadena String
+
+El operador de concatenación `(+)` se usa para concatenar (agregar) cadenas de texto o también llamados strings.
+
+<CodeBlock language="javascript">
+  {` let result = "Hola" + " " + "Mundo";
+ console.log(result); // Resultado: "Hola Mundo"
+`}
+</CodeBlock>
+
+## Operador de Comparacion
+
+Estos permiten **comparar** dos valores y devolver un valor booleano `true` o `false` dependiendo del resultado de la comparación.
+
+<MdxTables
+  columns={["Operador", "Significado"]}
+  data={[
+    { operador: "x == y", significado: "Devuelve `true` si los operandos son iguales"},
+    { operador: "x != y", significado: "Devuelve `true` si los operandos son diferentes" },
+    { operador: "x === y", significado: "Devuelve `true` si los operandos son iguales y son del mismo tipo" },
+    { operador: "x !== y", significado: "Devuelve `true` si los operandos son diferentes y son del mismo tipo" },
+    { operador: "x > y", significado: "Devuelve `true` si el operando de la izquierda es mayor que el operando de la derecha." },
+    { operador: "x >= y", significado: "Devuelve `true` si el operando de la izquierda es mayor o igual que el operando de la derecha" },
+    { operador: "x < y", significado: "Devuelve `true` si el operando de la izquierda es menor que el operando de la derecha." },
+    { operador: "x <= y", significado: "	Devuelve `true` si el operando de la izquierda es menor o igual que el operando de la derecha." },
+
+]}
+renderCell={(item, columnIndex) => {
+const keys = ["operador", "significado"];
+return item[keys[columnIndex]];
+}}
+/>
+
+### Ejemplos de Operadores de Comparacion
+
+<CodeBlock language="javascript">
+  {` let a = 10;
+ let b = '10';
+ let c = 20;
+
+ console.log(a == b); // true, '10' se convierte a 10
+
+ console.log(a != c); // true, 10 no es igual a 20
+
+ console.log(a === b); // false, 10 y '10' son de diferente tipo
+
+ console.log(a !== b); // true, 10 y '10' son de diferente tipo
+
+ console.log(c > a); // true, 20 es mayor que 10
+
+ console.log(a >= b); // true, 10 es igual a '10' después de la conversión de tipo
+
+ console.log(a < c); // true, 10 es menor que 20
+
+ console.log(a <= b); // true, 10 es igual a '10' después de la conversión de tipo
+`}
+</CodeBlock>
+
+
+## Operadores Lógicos
+Los operadores lógicos en Javascript están pensados para poder realizar operaciones con operandos booleanos, es decir, valores que pueden ser `true` o `false`.
+
+<MdxTables
+  columns={["Nombre", "Operador", "Significado"]}
+  data={[
+    { name: "AND",operador: "x && y", significado: "Operador AND, el cual devuelve true si ambos operandos son true. Si no son valores booleanos devolverá y."},
+    { name: "OR",operador: "x || y", significado: "Operador OR, el cual devuelve true si alguno de los operandos son true. Si no son valores booleanos devolverá x."},
+    { name: "NOT",operador: "! x", significado: "Operador NOT, el cual invierte el valor del operando de true a false y de false a true."},
+]}
+renderCell={(item, columnIndex) => {
+const keys = ["name", "operador", "significado"];
+return item[keys[columnIndex]];
+}}
+/>
+
+### AND
+
+<CodeBlock language="javascript">
+  {` console.log(true && true);    // true
+ console.log(true && false);   // false
+ console.log(5 > 3 && 8 < 10); // true, ambas condiciones son verdaderas
+ console.log(5 > 3 && 8 > 10); // false, porque una de las condiciones es falsa
+`}
+</CodeBlock>
+
+### OR
+
+<CodeBlock language="javascript">
+  {` console.log(true || false);   // true
+ console.log(false || false);  // false
+ console.log(5 > 3 || 8 > 10); // true, porque una de las condiciones es verdadera
+ console.log(5 < 3 || 8 > 10); // false, porque ambas condiciones son falsas
+`}
+</CodeBlock>
+
+### NOT
+
+<CodeBlock language="javascript">
+{` console.log(!true);   // false
+ console.log(!false);  // true
+ console.log(!(5 > 3)); // false, porque 5 > 3 es true, y !true es false
+ console.log(!(5 < 3)); // true, porque 5 <CodeBlock 3 es false, y !false es true
+`}
+</CodeBlock>
+
+## Operadores Especiales
+
+### Operador Ternario
+
+El operador ternario es el único operador JavaScript que toma tres operandos. Este operador se utiliza como una forma abreviada de una declaración if...else.
+
+<CodeBlock language="javascript">
+  {` let edad = 18;
+ let status = (edad >= 18) ? 'adulto' : 'menor de edad';
+ console.log(status); // adulto
+`}
+</CodeBlock>
+
+### Operador de tipo de dato `typeof`
+
+El operador `typeof` devuelve una cadena que indica el tipo de dato de una variable.
+
+<CodeBlock language="javascript">
+  {` let x = 10;
+ console.log(typeof x); // number
+
+ let y = 'Hola';
+ console.log(typeof y); // string
+
+ let z = true;
+ console.log(typeof z); // boolean
+`}
+</CodeBlock>
