@@ -1,0 +1,129 @@
+---
+title: 07 - Bucles en JavaScript While, Do...While y For
+description: Explora los principales bucles en JavaScript, cómo funcionan y cuándo utilizarlos en tu código para ejecutar tareas repetitivas de manera eficiente.
+date: "2024-08-22"
+---
+
+Los bucles son fundamentales para evitar la repetición de código y hacer que el programa sea más eficiente. Permiten ejecutar repetidamente un bloque de código mientras se cumpla una condición específica.
+
+<Image
+  src="/post-7/while-loop.jpg"
+  width="618"
+  height="404"
+  alt="Imagen condicional if, else, else if"
+/>
+
+## 1. Bucle While
+
+El bucle `while` es un ciclo repetitivo basado en una expresión lógica. Si la expresión lógica es verdadera, el bucle se ejecuta; si es falsa, el bucle no se ejecuta. Es importante destacar que si la condición es falsa desde el principio, el código dentro del bucle `while` no se ejecutará nunca.
+
+<CodeBlock language="javascript">
+{` let i = 0;  // Inicialización de la variable contador
+
+// Condición: Mientras la variable contador sea menor de 5
+while (i < 5) {
+console.log("Valor de i:", i);
+
+i = i + 1; // Incrementamos el valor de i
+}
+`}
+
+</CodeBlock>
+
+En este ejemplo, mientras la condición sea verdadera, el código dentro del bucle `while` se seguirá ejecutando. Cuando la condición se vuelva falsa, el bucle se detendrá.
+
+El código anterior imprimirá:
+
+```javascript
+Valor de i: 0
+Valor de i: 1
+Valor de i: 2
+Valor de i: 3
+Valor de i: 4
+```
+
+Si la `condicion` es verdadera el `codigo` dentro de while se seguira ejecutando.
+
+> Las llaves no son requeridas para un cuerpo de una sola línea
+
+<CodeBlock language="javascript">
+{` let i = 0;  // Inicialización de la variable contador
+
+ // Condición: Mientras la variable contador sea menor de 5
+ while (i < 5) console.log("Valor de i:", i++);
+`}
+
+</CodeBlock>
+
+## 2. Bucle Do While
+
+El bucle `do...while` es una variación del bucle `while`, pero con una diferencia clave: siempre se ejecuta al menos una vez, ya que evalúa la condición después de ejecutar el bloque de código.
+
+<CodeBlock language="javascript">
+{` let i = 5;
+
+ do {
+ console.log("Hola a todos");
+ i = i + 1;
+ } while (i < 5);
+
+ console.log("Bucle finalizado");
+`}
+
+</CodeBlock>
+
+El código anterior imprimirá:
+
+```js
+ Hola a todos
+ Bucle finalizado
+```
+
+1. En lugar de utilizar un while desde el principio junto a la condición, escribimos `do`.
+2. El `while` con la condición se traslada al final del bucle.
+3. Lo que ocurre en este caso es que el interior del bucle se realiza siempre, y sólo se analiza la condición al terminar el bucle, por lo que aunque no se cumpla, se va a realizar al menos una vez.
+
+## 3. Bucle For
+
+El bucle `for` es uno de los más utilizados en la programación. Se compone de tres partes: **inicialización**, **condición** e **incremento**. Este bucle es ideal cuando sabes cuántas veces quieres que se repita un bloque de código.
+
+<CodeBlock language="javascript">
+  {` // for (inicialización; condición; incremento)
+ for (let i = 0; i < 5; i++) {
+  alert("Valor de i:", i);
+ }
+`}
+</CodeBlock>
+
+El código anterior imprimirá:
+
+```js
+Valor de i: 0
+Valor de i: 1
+Valor de i: 2
+Valor de i: 3
+Valor de i: 4
+```
+
+Expliquemos las partes del bucle `for`:
+
+<MdxTables
+  columns={["Nombre", "Código", "Descripción"]}
+  data={[
+    { parte: "comienzo", codigo: "let i = 0", descripcion: "Se ejecuta una vez al comienzo del bucle." },
+    { parte: "condición", codigo: "i < 5", descripcion: "Comprobada antes de cada iteración del bucle. Si es falsa, el bucle finaliza." },
+    { parte: "cuerpo", codigo: "alert(i)", descripcion: "Se ejecuta una y otra vez mientras la condición sea verdadera." },
+    { parte: "paso", codigo: "i++", descripcion: "Se ejecuta después del cuerpo en cada iteración." }
+]}
+
+renderCell={(item, columnIndex) => {
+const keys = ["parte", "codigo", "descripcion"];
+return item[keys[columnIndex]];
+}}
+/>
+
+Cada tipo de bucle tiene su utilidad en diferentes situaciones. 
+
+- Usa while cuando no sabes cuántas veces se repetirá el bucle, pero sabes cuál es la condición de salida. 
+- Utiliza do...while si necesitas que el código se ejecute al menos una vez antes de evaluar la condición. 
+- Elige for cuando sabes de antemano cuántas veces necesitas que se repita el código.
