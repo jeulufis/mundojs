@@ -1,0 +1,96 @@
+---
+title: 08 - Condicional Switch en JavaScript
+description: Aprende a utilizar la estructura de control switch en JavaScript para simplificar la toma de decisiones en tu código y ejecutar diferentes bloques de código según el valor de una expresión.
+date: "2024-08-25"
+---
+
+Si haz ocupado [if/else](https://mundojs.vercel.app/posts/06-sentencias-condicional) es probable que hayas notado que una estructura anidada puede volverse confusa y difícil de leer. En estos casos, es recomendable utilizar la estructura de control `switch`.
+
+Esta en pocas palabras `switch` es una forma más limpia y organizada de manejar múltiples condiciones, reemplazando la necesidad de anidar varios bloques `if/else`.
+
+<Image
+  src="/post-8/switch.png"
+  width="618"
+  height="404"
+  alt="Imagen condicional if, else, else if"
+/>
+
+## Condicional Switch
+
+La estructura de control switch permite definir casos específicos a realizar cuando la variable expuesta como condición sea igual a los valores que se especifican a continuación mediante cada case:
+
+<CodeBlock language="javascript">
+{` switch (expresión) {
+  case valor1:
+    // Bloque de código para valor1
+    break;
+  case valor2:
+    // Bloque de código para valor2
+    break;
+  // Puedes tener tantos casos como necesites
+  default:
+    // Bloque de código si ninguno de los casos coincide
+ }
+`}
+
+</CodeBlock>
+
+### Desglose del código:
+- expresión: Es el valor que se evaluará y comparará con los diferentes `case`.
+- case valor: Si la expresión coincide con este valor, se ejecutará el bloque de código asociado a este `case`.
+- break: Finaliza la ejecución del switch después de ejecutar el bloque de código. Si no se coloca, la ejecución continúa con el siguiente `case`.
+- default: Es opcional y se ejecuta si ninguno de los casos coincide con la `expresión`
+
+### Ejemplo de uso:
+
+<CodeBlock language="javascript">
+{` const dia = 3;
+
+ switch (dia) {
+  case 1:
+    console.log("Lunes");
+    break;
+  case 2:
+    console.log("Martes");
+    break;
+  case 3:
+    console.log("Miércoles");
+    break;
+  case 4:
+    console.log("Jueves");
+    break;
+  case 5:
+    console.log("Viernes");
+    break;
+  default:
+    console.log("Fin de semana");
+ }
+
+`}
+
+</CodeBlock>
+
+#### Desglose:
+1. `const dia = 3;`
+Se define una constante llamada dia y se le asigna el valor *3*. Esta será la expresión evaluada en la estructura switch.
+
+2. `switch (dia) {...}` 
+La estructura switch evalúa el valor de la variable dia. Dependiendo de su valor, se ejecutará uno de los bloques de código definidos en los case.
+
+3. `case 1:`
+Si dia es igual a 1, se ejecutará console.log("Lunes");, lo que imprimirá "Lunes" en la consola. El break; asegura que el programa salga del switch después de ejecutar este bloque, evitando que se ejecuten los siguientes case.
+
+4. `case 2:`
+Si dia es igual a 2, se ejecutará console.log("Martes");, imprimiendo "Martes" en la consola. Luego, el break; detiene la ejecución de otros case.
+
+5. `case 3:`
+En este caso, como dia es igual a 3, se ejecutará console.log("Miércoles");, imprimiendo "Miércoles" en la consola. Este es el bloque de código que se ejecutará dado que dia tiene el valor 3.
+
+6. `case 4:`
+Si dia fuera igual a 4, se ejecutaría console.log("Jueves");. Sin embargo, en este ejemplo, este caso no se ejecutará porque dia no es igual a 4.
+
+7. `case 5:`
+Similar al caso anterior, si dia fuera igual a 5, se ejecutaría console.log("Viernes");. Este bloque tampoco se ejecutará en este ejemplo.
+
+8. `default:`
+Si dia no coincidiera con ninguno de los valores en los casos anteriores (1, 2, 3, 4 o 5), se ejecutaría el bloque dentro del default, que imprime "Fin de semana". Como dia es igual a 3, este bloque no se ejecutará en este caso.
