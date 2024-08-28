@@ -1,0 +1,128 @@
+---
+title: 09 - Funciones en JavaScript
+description: Crea bloques de código reutilizables y define parámetros para cambiar su comportamiento.
+date: "2024-08-26"
+---
+
+Cuando desarrollamos aplicaciones grandes, es esencial reutilizar bloques de código en diferentes partes de nuestro programa. Para lograr esto, utilizamos las llamadas **funciones**. Una función es un conjunto de instrucciones que se agrupan bajo un nombre y pueden ejecutarse cuando sea necesario.
+
+Por ejemplo, `alert` es una función integrada en JavaScript que muestra un mensaje en pantalla. Pero también podemos crear nuestras propias funciones para realizar tareas específicas.
+
+<Image
+  src="/post-9/function.png"
+  width="618"
+  height="404"
+  alt="Imagen de caja de herramientas de javascript"
+/>
+
+Las funciones no solo ayudan a organizar y reutilizar código, sino que también mejoran la **legibilidad** y **mantenibilidad** del programa.
+
+Tenemos 3 tipos de funciones javascript:
+
+1. Por **declaración**
+2. Por **expresión**
+3. Por **constructor de objeto**
+
+### Declaración de una función
+
+- Para declarar una función en JavaScript, utilizamos la palabra clave `function`
+- Seguida por un nombre, paréntesis y un bloque de código entre llaves `{}`. 
+- Dentro de las llaves se coloca el código que queremos ejecutar cuando llamemos a la función.
+
+<CodeBlock language="javascript">
+{` // Declaración de la función "saludar"
+ function saludar() {
+  // Contenido de la función
+  console.log("Hola, soy una función 👋");
+ }
+
+ // Llamada a la función "saludar"
+ saludar();
+`}
+</CodeBlock>
+
+En este ejemplo, la función `saludar` muestra un mensaje en la consola cada vez que es llamada.
+
+### Parámetros y Argumentos
+
+Las funciones también pueden recibir **parámetros**, que son **variables** que se pasan a la función para modificar su comportamiento.
+
+<CodeBlock language="javascript">
+{` // Función que recibe un parámetro "nombre"
+ function saludar(nombre) {
+  console.log("Hola, " + nombre + " 👋");
+ }
+
+ // Llamada a la función con un argumento
+ saludar("Juan"); // Hola, Juan 👋
+`}
+</CodeBlock>
+
+- Aquí, el parámetro `nombre` permite que la función `saludar` sea más flexible
+- Mostrando un mensaje personalizado basado en el argumento que le pasamos al llamarla.
+
+### Funciones que Devuelven un Valor
+
+Las funciones también pueden devolver un valor utilizando la *palabra clave* `return`. Esto permite que la función no solo realice una acción, sino que también envíe un resultado de vuelta a la parte del código que la llamó.
+
+<CodeBlock language="javascript">
+{` // Función que suma dos números y devuelve el resultado
+ function sumar(a, b) {
+  return a + b;
+ }
+
+ const resultado = sumar(3, 5); // resultado = 8
+ console.log(resultado); // 8
+`}
+</CodeBlock>
+
+En este caso, la función `sumar` devuelve la suma de los dos números que recibe como parámetros. El resultado se almacena en la variable `resultado`.
+
+### Funciones como Valores
+
+En JavaScript, las funciones son **ciudadanos de primera clase** ( significa que pueden ser tratadas como valores ).
+
+Podemos asignar una función a una variable, pasarla como argumento a otra función o incluso devolverla desde una función.
+
+<CodeBlock language="javascript">
+{` // Asignar una función a una variable
+ const saludar = function() {
+  console.log("Hola desde una función anónima 👋");
+ };
+
+ saludar(); // Hola desde una función anónima 👋
+
+ // Pasar una función como argumento
+ function ejecutarFuncion(func) {
+  func();
+ }
+
+ ejecutarFuncion(saludar); // Hola desde una función anónima 👋
+`}
+</CodeBlock>
+
+Este ejemplo muestra cómo las funciones pueden manejarse como cualquier otro valor en JavaScript.
+
+### Funciones Flecha
+
+**JavaScript** también ofrece una sintaxis más concisa para escribir funciones, conocida como **funciones flecha** (arrow functions). Aunque son similares a las funciones tradicionales, tienen algunas diferencias clave, especialmente en cómo manejan el contexto `this`.
+
+<CodeBlock language="javascript">
+{` // Función flecha que suma dos números
+ const sumar = (a, b) => a + b;
+
+ console.log(sumar(3, 5)); // 8
+`}
+</CodeBlock>
+
+Las funciones flecha son especialmente útiles cuando queremos escribir funciones pequeñas y simples.
+
+El mundo de las funciones en JavaScript es bastante extenso, así que te dejo la documentación oficial que te vendrá de lujo:
+
+- [Definir funciones](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#definir_funciones)
+- [Llamar funciones](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#llamar_funciones)
+- [Ámbito de `function`](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#%C3%A1mbito_de_function)
+- [Ámbito y la pila de funciones](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#%C3%A1mbito_y_la_pila_de_funciones)
+- [Parámetros de función](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#par%C3%A1metros_de_funci%C3%B3n)
+- [Funciones Flecha](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#funciones_flecha)
+- [Funciones predefinidas](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions#funciones_predefinidas)
