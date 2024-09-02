@@ -1,0 +1,111 @@
+---
+title: 10 - Arrays en JavaScript
+description: Los Arrays son objetos similiares a las listas, con la capacidad de almacenar múltiples valores en una sola variable.
+date: "2024-09-01"
+---
+
+<Image
+  src="/post-10/array.jpg"
+  width="618"
+  height="404"
+  alt="Imagen de array de javascript"
+/>
+
+Los arrays en JavaScript son estructuras de datos similares a listas, que permiten almacenar múltiples valores en una sola variable.
+
+
+**Maneras de crear un array:**
+
+<CodeBlock language="javascript">
+{` let arr = new Array();
+ let arr = []; `}
+</CodeBlock>
+
+La forma más común de crear un array es utilizando corchetes `[ ]`, lo cual genera un array vacío.
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"]; `}
+</CodeBlock>
+
+<CodeBlock language="javascript">
+{` let users = ["Juan", "Pepito", "Jose"]; `}
+</CodeBlock>
+
+<CodeBlock language="javascript">
+{` let houseRooms = ["Living Room", "Kitchen", "Bedroom"]; `}
+</CodeBlock>
+
+Además, los arrays en JavaScript pueden almacenar diferentes tipos de datos:
+
+<CodeBlock language="javascript">
+{` let arr = ["Apple", 12, true];
+`}
+</CodeBlock>
+
+En este ejemplo:
+
+- En el índice `0` tenemos un **string**,
+- En el índice `1` tenemos un **number** 
+- En el índice `2` tenemos un **booleano**.
+
+
+Los arrays es un tema muy extenso, por lo que se recomienda leer la documentación oficial de [MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array) para aprender más sobre los métodos y propiedades que podemos utilizar con los arrays en JavaScript. Pero hare lo posible para explicar lo mas sencillo.
+
+## El operador *[ ]*
+
+Cuando queremos acceder a un elemento especifico de un array, se utiliza el operador `[]`. 
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"];
+
+ console.log(fruits[0]); // Apple
+ console.log(fruits[1]); // Orange
+ console.log(fruits[2]); // Plum
+`}
+</CodeBlock>
+
+Recordar que las posiciones empizan desde el `0`. Y si intemos acceder a un indice que no existe, nos devolvera `undefined`.
+
+### El operador `[]` tambien se puede utilizar para modificar un elemento del Array.
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"];
+
+ fruits[1] = "Pear"; // Cambiamos "Orange" por "Pear"
+
+ console.log(fruits); // ["Apple", "Pear", "Plum"]
+`}
+</CodeBlock>
+
+### Como saber la longitud de un Array
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"];
+
+ console.log(fruits.length); // 3
+`}
+</CodeBlock>
+
+### Obtener el ultimo elemento de un Array  
+
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"];
+
+ console.log(fruist[fruits.length - 1]) // Plum
+`}
+</CodeBlock>
+
+### Formas mas cortas de obtener el ultimo elemento de un Array
+
+<CodeBlock language="javascript">
+{` let fruits = ["Apple", "Orange", "Plum"];
+
+ console.log(fruits.at(-1)); // Plum
+ console.log(fruits.slice(-1)) // Plum
+`}
+</CodeBlock>
+
+Para continuar, es fundamental explicar los conceptos de `mutabilidad` e `inmutabilidad` en JavaScript, que son clave para entender cómo funcionan los arrays y otros tipos de datos. Sin embargo, dejaré este tema para el siguiente post, donde también exploraremos algunos métodos importantes que te serán de gran utilidad.
+
+> **Nota:**  Crea un array llamado `fruits` con los siguientes elementos: "manzana", "banana", "naranja".
