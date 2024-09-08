@@ -1,0 +1,165 @@
+---
+title: 10 - Mas metodos en Array (pop/push, shift/unshift, concat, join, split, includes, indexOf, find)
+description: Las estructuras de datos son la base de la programación, aprende a usarlas y a sacarles el máximo provecho
+date: "2024-09-05"
+---
+
+Como ya supimos que son los array y estos se ocupan de manera frecuente, es importante saber la forma correcta de manipular estos datos.
+
+Por ejemplo tenemos:
+
+### Metodo pop/push, shift/unshift
+
+- **pop()** - Elimina el último elemento de un array y lo devuelve.
+- **push()** - Añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
+- **shift()** - Elimina el primer elemento de un array y lo devuelve.
+- **unshift()** - Añade uno o más elementos al principio de un array y devuelve la nueva longitud del array.
+
+`pop`
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let finalUser = users.pop(); // Ana
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria']
+ console.log(finalUser); // Ana
+`}
+</CodeBlock>
+
+`push`
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let newUsers = users.push('Jose');
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana', 'Jose']
+ console.log(newUsers); // 5 -> por la longitud del array
+`}
+</CodeBlock>
+
+`shift`
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let firstUser = users.shift(); // Juan
+
+ console.log(users); // ['Pedro', 'Maria', 'Ana']
+ console.log(firstUser); // Juan
+`}
+</CodeBlock>
+
+`unshift`
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let newUsers = users.unshift('Jose');
+
+ console.log(users); // ['Jose', 'Juan', 'Pedro', 'Maria', 'Ana']
+ console.log(newUsers); // 5 -> por la longitud del array
+`}
+</CodeBlock>
+
+> Los métodos push/pop son rápidos, mientras que shift/unshift son lentos
+
+### Concatenar Arrays
+
+En los  tenemos el método `concat()`, que nos permite unir los elementos pasados por parámetro en un array.
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let newUsers = users.concat(['Jose', 'Carlos']);
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana']
+ console.log(newUsers); // ['Juan', 'Pedro', 'Maria', 'Ana', 'Jose', 'Carlos']
+`}
+</CodeBlock>
+
+### Metodo Join
+
+El método `join()` nos permite unir todos los elementos de un array en un string.
+
+Ejemplo 1:
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let usersString = users.join(', ');
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana']
+ console.log(usersString); // 'Juan, Pedro, Maria, Ana'  
+`}
+</CodeBlock>
+
+Ejemplo 2:
+
+<CodeBlock language="javascript">
+{` let users = ['Juan', 'Pedro', 'Maria', 'Ana'];
+ let usersString = users.join(' -> ');
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana']
+ console.log(usersString); // 'Juan -> Pedro -> Maria -> Ana'
+`}
+</CodeBlock>
+
+### Metodo Split
+
+El método `split()` nos permite dividir un string en un array de subcadenas.
+
+<CodeBlock language="javascript">
+{` let usersString = 'Juan, Pedro, Maria, Ana';
+ let users = usersString.split(', ');
+
+ console.log(usersString); // 'Juan, Pedro, Maria, Ana'
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana']
+`}
+</CodeBlock>
+
+<CodeBlock language="javascript">
+{` let usersString = 'Juan -> Pedro -> Maria -> Ana';
+ let users = usersString.split(' -> ');
+
+ console.log(users); // ['Juan', 'Pedro', 'Maria', 'Ana']
+`}
+</CodeBlock>
+
+## Buscar elementos en un Array
+
+`includes`
+
+Si quieremos comprar si un elemento existe en un array, podemos usar el método `includes()`.
+
+<CodeBlock language="javascript">
+{` const numbers = [5, 10, 15, 20, 25];
+
+ numbers.includes(3);    // false
+ numbers.includes(15);   // true
+`}
+</CodeBlock>
+
+`indexOf`
+
+Si queremos saber la posición de un elemento en un array, podemos usar el método `indexOf()`.
+
+<CodeBlock language="javascript">
+{` const numbers = [5, 10, 15, 20, 25, 20, 15, 10, 5];
+
+ numbers.indexOf(5);   // 0
+ numbers.indexOf(15);  // 2
+`}
+</CodeBlock>
+
+`find`
+
+Este método se usa para encontrar el primer elemento en un array que cumpla con una condición específica.
+
+<CodeBlock language="javascript">
+{` const usuarios = [
+  { id: 1, nombre: 'Juan' },
+  { id: 2, nombre: 'Ana' },
+  { id: 3, nombre: 'Luis' }
+ ];
+
+ const usuario = usuarios.find(user => user.id === 2);
+
+ console.log(usuario); // Salida: { id: 2, nombre: 'Ana' }
+`}
+</CodeBlock>
